@@ -1,4 +1,4 @@
-DB_URL=postgresql://postgres:admin123@localhost:5435/todo?sslmode=disable
+DB_URL=postgresql://postgres:admin123@localhost:2022/todo?sslmode=disable
 download:
 	go mod download
 
@@ -18,13 +18,13 @@ docker-image:
 	docker build -t todo:latest .
 
 docker-run:
-	docker run --name moonlay -p 8084:8080 todo:latest
+	docker run --name todo -p 8084:8080 todo:latest
 
 migrate:
 	migrate create -ext sql -dir db/migrations create_table_user
 
 postgres:
-	docker run --name postgres -d -p 5435:5432 -e POSTGRES_PASSWORD=admin123  postgres:12-alpine   
+	docker run --detach --name postgres -d -p 2022:5432 -e POSTGRES_PASSWORD=admin123  postgres
 
 createdb:
 	docker exec -it postgres createdb --username=postgres  todo

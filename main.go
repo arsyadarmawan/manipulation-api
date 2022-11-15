@@ -33,16 +33,13 @@ func main() {
 	db := app.NewDB(&configDB)
 
 	// tasks
-	repo := repository.NewStuffRepository(db)
-	services := service.NewStuffService(repo, validate)
-	controllers := controller.NewStuffController(services)
 
 	// users
 	repoUser := repository.NewAuthRepo(db)
 	serviceUser := service.NewUserService(repoUser, validate)
 	controllerUser := controller.NewAuthController(serviceUser)
 
-	router := app.NewRouter(controllers, &controllerUser)
+	router := app.NewRouter(&controllerUser)
 
 	router.PanicHandler = exception.ErrorHandler
 
