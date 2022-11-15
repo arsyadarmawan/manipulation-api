@@ -96,15 +96,18 @@ curl --location --request POST 'localhost:3000/api/auth/login' \
 }'
 ```
 
-* `Fetching Recruitment API /api/dans/career`: Fetching API.
+* `Fetching Recruitment API /api/dans/career`: Fetching API. you can add location, full_time value true or false, description, and page with value of number.
 
 ```
-curl --location --request POST 'localhost:3000/api/auth/login' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "username" : "admin",
-    "password" : "admin123"
-}'
+curl --location --request GET 'localhost:3000/api/dans/career?full_time=false&location=Remote&description=Murphy&page=1' \
+--header 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6MSwibmFtZSI6InRoYXJlZXEiLCJ1c2VybmFtZSI6InRoYXJlZXEiLCJleHAiOjE2Njg3Nzg5MTZ9.EyN-WmRvhofuptT2jHY-dx9VWD1xU09lgKIQNr95nPg'
+```
+
+* `Fetching Recruitment API /api/dans/career/:id`: Fetching data by ID.
+
+```
+curl --location --request GET 'localhost:3000/api/dans/career/7638eee4-4e75-4c06-a920-ea7619a311b5' \
+--header 'Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6MSwibmFtZSI6InRoYXJlZXEiLCJ1c2VybmFtZSI6InRoYXJlZXEiLCJleHAiOjE2Njg3Nzg5MTZ9.EyN-WmRvhofuptT2jHY-dx9VWD1xU09lgKIQNr95nPg'
 ```
 
 
