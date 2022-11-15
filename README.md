@@ -72,7 +72,7 @@ DB_PASSWORD=admin123
 
 
 
-## REST API
+## REST API Detail Documentation postman on api folder
 * `POST /api/auth/register`: register users. Here the example
 
 ```

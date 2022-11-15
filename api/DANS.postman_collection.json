@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "7f0f1f2c-eba5-43ab-bcfb-36e3f3888cfe",
+		"name": "DANS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4877041"
+	},
+	"item": [
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Careers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6MSwibmFtZSI6InRoYXJlZXEiLCJ1c2VybmFtZSI6InRoYXJlZXEiLCJleHAiOjE2Njg3Nzg5MTZ9.EyN-WmRvhofuptT2jHY-dx9VWD1xU09lgKIQNr95nPg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/dans/career",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"dans",
+								"career"
+							],
+							"query": [
+								{
+									"key": "full_time",
+									"value": "false",
+									"disabled": true
+								},
+								{
+									"key": "location",
+									"value": "Remote",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Murphy",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail Careers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6MSwibmFtZSI6InRoYXJlZXEiLCJ1c2VybmFtZSI6InRoYXJlZXEiLCJleHAiOjE2Njg3Nzg5MTZ9.EyN-WmRvhofuptT2jHY-dx9VWD1xU09lgKIQNr95nPg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/dans/career/7638eee4-4e75-4c06-a920-ea7619a311b5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"dans",
+								"career",
+								"7638eee4-4e75-4c06-a920-ea7619a311b5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Regist User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"admin\",\n    \"password\" : \"admin\",\n    \"username\" : \"thareeq\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"thareeq\",\n    \"password\" : \"hermudtad\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
