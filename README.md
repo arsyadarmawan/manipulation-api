@@ -111,7 +111,7 @@ curl --location --request GET 'localhost:3000/api/dans/career/7638eee4-4e75-4c06
 ```
 
 
-## Run the project
+## Run the project, dont forget your docker is active
 Download package
 ```console
 make download
