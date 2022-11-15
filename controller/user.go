@@ -2,7 +2,6 @@ package controller
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -224,7 +223,6 @@ func (a *UserController) FindCareer(writer http.ResponseWriter, request *http.Re
 			filtering = append(filtering, value)
 			continue
 		}
-		fmt.Printf(position)
 		if strings.ToLower(value.Type) == position {
 			filtering = append(filtering, value)
 			continue

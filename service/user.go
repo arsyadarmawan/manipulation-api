@@ -59,6 +59,7 @@ func (s *AuthRepositoryImpl) Register(ctx context.Context, request web.UserCreat
 	return web.UserReponse{
 		Username: userDomain.Username,
 		Name:     userDomain.Name,
+		Id:       int(userDomain.Id),
 	}
 }
 

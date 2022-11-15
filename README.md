@@ -27,13 +27,9 @@ since their usages are mostly localized and abstracted.
 * Testing: [testify](https://github.com/stretchr/testify)
 * Gorm [gorm](https://gorm.io/)
 
-## REST API for TASKS
-- Find all list tasks
-- Get detail task
-- Get subtask by Id
-- Update task
-- Create task
-- Delete task
+## REST API Career
+- Find all list careers
+- Get detail career by ID
 
 ## Installation
 If this is your first time encountering Go, please follow [the instructions](https://golang.org/doc/install) to
@@ -45,7 +41,7 @@ own database server. The kit requires **Docker 17.05 or higher** for the multi-s
 
 
 # download the starter kit
-git clone https://github.com/arsyadarmawan/todo-list-jwt.git
+git clone https://github.com/arsyadarmawan/manipulation-api.git
 
 cd todo-list
 
@@ -66,17 +62,13 @@ Example
 ```
 APPNAME=Cart
 APP_URL=localhost:3002
-PORT=3003
 DB_HOST=localhost
-DB_PORT=3306
-DB_NAME=tasks
-DB_USERNAME=admin
+DB_PORT=2022
+DB_NAME=todo
+DB_USERNAME=postgres
 DB_PASSWORD=admin123
 
 ```
-
-
-
 
 
 
@@ -93,7 +85,7 @@ curl --location --request POST 'localhost:3000/api/auth/register' \
 }'
 ```
 
-* `Login /api/tasks`: Login users with regitered account.
+* `Login /api/auth/login`: Login users with regitered account.
 
 ```
 curl --location --request POST 'localhost:3000/api/auth/login' \
@@ -104,58 +96,17 @@ curl --location --request POST 'localhost:3000/api/auth/login' \
 }'
 ```
 
-* `POST /api/tasks`: post new task, this following curl code.
+* `Fetching Recruitment API /api/dans/career`: Fetching API.
 
 ```
-curl --location --request POST 'http://127.0.0.1:3000/api/tasks' \
+curl --location --request POST 'localhost:3000/api/auth/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-    "title" : "seria",
-    "description" : "seria",
-    "image" : "loremipsum.jpg",
-    "parent_task_id" : null,
-    "poin" : 2
+    "username" : "admin",
+    "password" : "admin123"
 }'
 ```
 
-* `GET /api/tasks`: returns tasks list, dont forget insert token from login
-
-```
-curl --location --request GET 'http://127.0.0.1:3000/api/tasks/'
-```
-* `GET /api/tasks/:id`: returns the detailed information of an task, dont forget insert token from login
-```
-curl --location --request GET 'http://127.0.0.1:3000/api/tasks/1'
-```
-* `PUT /api/tasks/:id`: updates an existing task, dont forget insert token from login
-```
-curl --location --request PUT 'localhost:3000/api/tasks/1' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "title" : "serie c",
-    "description" : "serie c",
-    "image" : "loremipsum.jpg",
-    "parent_task_id" : null
-}'
-```
-* `DELETE /api/tasks/:id`: deletes an task, dont forget insert token from login
-```
-curl --location --request DELETE 'http://127.0.0.1:3000/api/tasks/1' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json'
-```
-
-All success Response will be
-```
-curl --location --request DELETE 'http://127.0.0.1:8080/api/cakes/1' \
---header 'Content-Type: application/json' \
---header 'Accept: application/json'
-```
-
-* `Get Subtask by id /v1/albums/:id`: deletes an task, dont forget insert token from login
-```
-curl --location --request GET 'localhost:3000/api/subtaks/1'
-```
 
 ## Run the project
 Download package
@@ -171,15 +122,15 @@ make dep
 
 Connect postgres with password admin123
 ```console
-make postgres
+make postgres in docker
 ```
 
-Create DB
+Create DB in docker
 ```console
 make createdb
 ```
 
-Migrate
+Migrate in docker
 ```console
 make migrate_up
 ```
